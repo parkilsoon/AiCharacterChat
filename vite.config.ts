@@ -17,7 +17,8 @@ export default defineConfig(({ mode }) => {
       'process.env.API_KEY': JSON.stringify(apiKey)
     },
     server: {
-      host: true
+      host: true,
+      allowedHosts: ['suny.keymedidev.com']
     }
   };
 });
