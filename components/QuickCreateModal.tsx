@@ -26,7 +26,8 @@ const QuickCreateModal: React.FC<QuickCreateModalProps> = ({ isOpen, onClose, on
       setDescription('');
       setError(null);
     } catch (err: any) {
-      setError(err.userMessage || err.message || '캐릭터 생성 중 오류가 발생했습니다.');
+      const detail = err.originalError?.message || err.message || '';
+      setError(`${err.userMessage || '캐릭터 생성 중 오류가 발생했습니다.'} [${detail}]`);
     } finally {
       setLoading(false);
     }

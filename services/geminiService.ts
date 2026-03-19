@@ -1484,6 +1484,9 @@ ${description}
       }
       return parsed as CharacterData;
     } catch (e) {
+      console.error('[QuickCreate] 원본 에러:', e);
+      console.error('[QuickCreate] 에러 타입:', typeof e, e?.constructor?.name);
+      console.error('[QuickCreate] 에러 메시지:', e instanceof Error ? e.message : String(e));
       if (e instanceof SyntaxError) {
         throw new GeminiApiError('UNKNOWN', 'JSON parse failed', 'AI 응답을 파싱할 수 없습니다. 다시 시도해주세요.');
       }
