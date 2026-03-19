@@ -1,0 +1,7 @@
+{
+  "name": "Gemini Character Card Chat",
+  "description": "An AI character chat application that imports SillyTavern/AICC character cards via ST Card ID or JSON, enabling immersive roleplay with Gemini 3 Flash.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
